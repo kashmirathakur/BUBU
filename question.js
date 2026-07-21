@@ -1,4 +1,4 @@
-const questions=[
+const questions = [
 
 "1️⃣ If your girlfriend asks for your phone, will you give it?\n\nजर गर्लफ्रेंडने मोबाईल मागितला तर देशील का?",
 
