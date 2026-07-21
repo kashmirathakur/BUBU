@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Bubu❤️Bubu</title>
+
+<style>
+
+body{
+
+font-family:Arial;
+
+background:linear-gradient(135deg,#ff69b4,#ffc0cb);
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+height:100vh;
+
+text-align:center;
+
+margin:0;
+
+}
+
+.box{
+
+background:white;
+
+padding:40px;
+
+border-radius:20px;
+
+}
+
+h1{
+
+color:#ff1493;
+
+}
+
+button{
+
+padding:12px 25px;
+
+font-size:18px;
+
+background:#ff1493;
+
+color:white;
+
+border:none;
+
+border-radius:10px;
+
+cursor:pointer;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h1>💖 Thank You Bubu 💖</h1>
+
+<h2>You completed the Love Quiz ❤️</h2>
+
+<h3>तू Bubu❤️Bubu टेस्ट पूर्ण केली ❤️</h3>
+
+<p>Love Score ❤️ 100/100</p>
+
+<button onclick="showAnswers()">See My Answers</button>
+
+</div>
+
+<script>
+
+function showAnswers(){
+
+let data=JSON.parse(localStorage.getItem("answers"));
+
+alert(JSON.stringify(data,null,2));
+
+}
+
+</script>
+
+</body>
+</html>
