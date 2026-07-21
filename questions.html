@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bubu❤️Bubu Love Quiz</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial;
+background:linear-gradient(135deg,#ff69b4,#ffc0cb);
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.box{
+background:white;
+padding:30px;
+border-radius:20px;
+width:380px;
+text-align:center;
+box-shadow:0 0 20px rgba(0,0,0,.2);
+}
+
+button{
+margin:10px;
+padding:12px 20px;
+border:none;
+border-radius:10px;
+font-size:18px;
+cursor:pointer;
+}
+
+.yes{
+background:#ff1493;
+color:white;
+}
+
+.no{
+background:#777;
+color:white;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h2 id="question"></h2>
+
+<button class="yes" onclick="answer('Yes')">❤️ Yes / हो</button>
+
+<button class="no" onclick="answer('No')">🤭 No / नाही</button>
+
+</div>
+
+<script src="questions.js"></script>
+
+</body>
+</html>
