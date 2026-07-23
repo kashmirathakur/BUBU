@@ -1,33 +1,10 @@
-const funnyMessages = [
+function checkPassword() {
+    const password = document.getElementById("password").value;
+    const message = document.getElementById("message");
 
-"😂 Wrong Password!",
-
-"🙈 Nice Try!",
-
-"🥺 Think Again!",
-
-"❤️ Ask Your Girlfriend!",
-
-"😜 Not Correct!"
-
-];
-
-function login(){
-
-let pass=document.getElementById("password").value;
-
-if(pass==="5493"){
-
-window.location.href="selfie.html";
-
-}
-
-else{
-
-document.getElementById("message").innerHTML=
-
-funnyMessages[Math.floor(Math.random()*funnyMessages.length)];
-
-}
-
+    if (password === "5493") {
+        window.location.href = "selfie.html";
+    } else {
+        message.innerHTML = "❌ Wrong Password! / ❌ चुकीचा पासवर्ड!";
+    }
 }
