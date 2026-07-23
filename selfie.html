@@ -3,69 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bubu❤️Bubu - Selfie</title>
-
-<style>
-body{
-font-family:Arial;
-background:linear-gradient(135deg,#ff69b4,#ffc0cb);
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
-margin:0;
-}
-
-.container{
-background:white;
-padding:25px;
-border-radius:20px;
-text-align:center;
-width:360px;
-box-shadow:0 10px 30px rgba(0,0,0,.2);
-}
-
-video,img{
-width:100%;
-border-radius:15px;
-margin-top:15px;
-}
-
-button{
-margin-top:15px;
-padding:12px 20px;
-background:#ff1493;
-color:white;
-border:none;
-border-radius:10px;
-font-size:16px;
-cursor:pointer;
-}
-</style>
-
+<title>Upload Selfie</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <div class="container">
 
-<h2>📸 Take a Selfie</h2>
+<h1>📸 Upload Today's Selfie</h1>
 
-<p>Smile Bubu ❤️</p>
+<p>Current selfie upload kara ❤️</p>
 
-<video id="video" autoplay playsinline></video>
+<input type="file" id="photo" accept="image/*">
 
-<canvas id="canvas" style="display:none;"></canvas>
+<br><br>
 
-<img id="photo" style="display:none;">
-
-<button onclick="takeSelfie()">Take Selfie ❤️</button>
-
-<button onclick="nextPage()">Continue ➜</button>
-
-</div>
-
-<script src="selfie.js"></script>
-
-</body>
-</html>
+<button onclick="nextPage()">Continue ➜
