@@ -4,19 +4,109 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Upload Selfie</title>
-<link rel="stylesheet" href="style.css">
+
+<style>
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#ffd6e8;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.card{
+    background:#fff;
+    width:90%;
+    max-width:380px;
+    border-radius:20px;
+    padding:20px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,.2);
+}
+
+h1{
+    color:#ff4081;
+}
+
+video,canvas{
+    width:100%;
+    border-radius:15px;
+    border:3px solid #ff4081;
+}
+
+button{
+    width:100%;
+    padding:15px;
+    margin-top:15px;
+    border:none;
+    border-radius:10px;
+    background:#ff4081;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+}
+</style>
 </head>
 
 <body>
 
-<div class="container">
+<div class="card">
 
-<h1>📸 Upload Today's Selfie</h1>
+<h1>📸 Today's Selfie</h1>
 
-<p>Current selfie upload kara ❤️</p>
+<video id="video" autoplay playsinline></video>
 
-<input type="file" id="photo" accept="image/*">
+<canvas id="canvas" style="display:none;"></canvas>
 
-<br><br>
+<button id="captureBtn">📷 Capture Selfie</button>
 
-<button onclick="nextPage()">Continue ➜
+<button id="continueBtn" style="display:none;">Continue ➜</button>
+
+</div>
+
+<script>
+
+const video=document.getElementById("video");
+const canvas=document.getElementById("canvas");
+const captureBtn=document.getElementById("captureBtn");
+const continueBtn=document.getElementById("continueBtn");
+
+navigator.mediaDevices.getUserMedia({
+video:{facingMode:"user"}
+})
+.then(stream=>{
+video.srcObject=stream;
+});
+
+captureBtn.onclick=function(){
+
+canvas.width=video.videoWidth;
+canvas.height=video.videoHeight;
+
+const ctx=canvas.getContext("2d");
+ctx.drawImage(video,0,0);
+
+canvas.style.display="block";
+video.style.display="none";
+
+video.srcObject.getTracks().forEach(track=>track.stop());
+
+captureBtn.style.display="none";
+continueBtn.style.display="block";
+
+localStorage.setItem("selfie",canvas.toDataURL("image/png"));
+
+};
+
+continueBtn.onclick=function(){
+
+window.location.href="questions.html";
+
+};
+
+</script>
+
+</body>
+</html>
