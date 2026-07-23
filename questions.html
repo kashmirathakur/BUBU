@@ -3,63 +3,80 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bubu❤️Bubu Love Quiz</title>
-
+<title>Bubu Love Test ❤️</title>
+<link rel="stylesheet" href="style.css">
 <style>
-body{
-margin:0;
-font-family:Arial;
-background:linear-gradient(135deg,#ff69b4,#ffc0cb);
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
-}
-
-.box{
-background:white;
-padding:30px;
-border-radius:20px;
-width:380px;
-text-align:center;
-box-shadow:0 0 20px rgba(0,0,0,.2);
-}
-
-button{
+.yesBtn,.noBtn{
+padding:12px 25px;
 margin:10px;
-padding:12px 20px;
+font-size:18px;
 border:none;
 border-radius:10px;
-font-size:18px;
 cursor:pointer;
 }
 
-.yes{
-background:#ff1493;
+.yesBtn{
+background:#ff4081;
 color:white;
 }
 
-.no{
-background:#777;
+.noBtn{
+background:#666;
 color:white;
+position:relative;
 }
 </style>
 </head>
 
 <body>
 
-<div class="box">
+<div class="container">
 
-<h2 id="question">Loading...</h2>
+<h1>❤️ Bubu Love Test ❤️</h1>
 
-<button class="yes" onclick="answer('Yes')">❤️ Yes / हो</button>
+<h2 id="question"></h2>
+<p id="marathi"></p>
 
-<button class="no" onclick="answer('No')">🤭 No / नाही</button>
+<button class="yesBtn" onclick="yesAnswer()">❤️ Yes</button>
+<button class="noBtn" id="noBtn" onmouseover="moveNo()">❌ No</button>
 
 </div>
 
-<script src="questions.js"></script>
+<script>
 
-</body>
-</html>
-<script src="questions.js"></script>
+const questions=[
+{
+en:"1️⃣ If your girlfriend asks for your phone, will you give it?",
+mr:"जर तुझ्या गर्लफ्रेंडने तुझा मोबाईल मागितला तर देशील का?"
+},
+{
+en:"2️⃣ Will you always reply to her messages even when busy?",
+mr:"तू कितीही बिझी असलास तरी तिच्या मेसेजला रिप्लाय करशील का?"
+},
+{
+en:"3️⃣ Will you take her on surprise dates?",
+mr:"तिला सरप्राईज डेटवर घेऊन जाशील का?"
+},
+{
+en:"4️⃣ Will you marry your girlfriend one day? 💍",
+mr:"भविष्यात तू तुझ्या गर्लफ्रेंडशी लग्न करशील का?"
+}
+];
+
+let current=0;
+
+showQuestion();
+
+function showQuestion(){
+
+document.getElementById("question").innerHTML=questions[current].en;
+
+document.getElementById("marathi").innerHTML=questions[current].mr;
+
+}
+
+function yesAnswer(){
+
+current++;
+
+if(current<questions.length){
